@@ -25,12 +25,26 @@ public class TokenService {
 
             return JWT.create()
                     .withIssuer("FinSync")
-                    .withSubject(user.getId().toString())
+                    .withSubject(user.getUsername())
                     .withExpiresAt(dateExpires())
                     .sign(algorithm);
 
         } catch (JWTVerificationException exception){
             throw new RuntimeException("Error generating the token!",exception);
+        }
+    }
+
+
+    public String getSubject(String jwtToken){
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(secret);
+            return JWT.require(algorithm)
+                    .withIssuer("FinSync")
+                    .build()
+                    .verify(jwtToken)
+                    .getSubject();
+        } catch (JWTVerificationException exception){
+            throw new RuntimeException("Error invalid Token!");
         }
     }
 
