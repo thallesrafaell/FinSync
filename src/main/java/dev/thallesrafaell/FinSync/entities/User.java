@@ -1,6 +1,7 @@
 package dev.thallesrafaell.FinSync.entities;
 
 
+import dev.thallesrafaell.FinSync.entities.DTO.ResgisterDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,6 +27,12 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
+
+    public User(ResgisterDTO request) {
+        this.name = request.name();
+        this.username = request.username();
+        this.email = request.email();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
