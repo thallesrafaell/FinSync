@@ -28,6 +28,9 @@ public class User implements UserDetails {
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL) // referência inversa
+    private Wallet wallet; // carteira associada ao usuário
+
     public User(ResgisterDTO request) {
         this.name = request.name();
         this.username = request.username();
