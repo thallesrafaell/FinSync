@@ -23,4 +23,8 @@ public class BillsCategory {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Bills> bills = new HashSet<>();
 
+    public BillsCategory(String name){
+        this.name = name;
+    }
+
 }

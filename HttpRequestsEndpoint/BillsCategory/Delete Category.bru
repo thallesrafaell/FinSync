@@ -1,0 +1,22 @@
+meta {
+  name: Delete Category
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:8080/bills/category/casa
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJGaW5TeW5jIiwic3ViIjoidGhhbGxlc3JhZmFlbCIsImV4cCI6MTcyNzEyNzUyMn0.KDxrjmrSy6-N3id4ovlaX4tlEp1A9btReLtMytWYnF8
+}
+
+body:json {
+  {
+    "oldName":"Cartão",
+    "newName":"cartao"
+  }
+}

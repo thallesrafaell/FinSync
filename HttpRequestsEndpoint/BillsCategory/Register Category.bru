@@ -1,0 +1,21 @@
+meta {
+  name: Register Category
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/bills/category
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJGaW5TeW5jIiwic3ViIjoidGhhbGxlc3JhZmFlbCIsImV4cCI6MTcyNzEyMDE3M30.spHa8rg56HpAxWgPR5eks-vI6FxelWcQksN6ZpJP3rE
+}
+
+body:json {
+  {
+    "name":"Casa"
+  }
+}
