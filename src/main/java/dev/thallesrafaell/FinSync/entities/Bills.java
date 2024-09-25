@@ -1,5 +1,7 @@
 package dev.thallesrafaell.FinSync.entities;
 
+
+import dev.thallesrafaell.FinSync.entities.DTO.BillsDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,4 +32,12 @@ public class Bills {
     @ManyToOne
     @JoinColumn(name = "wallet_id") // chave estrangeira
     private Wallet wallet; // referência à carteira
+
+    public Bills(BillsDTO dados)
+    {
+        this.name = dados.name();
+        this.value = dados.value();
+        this.dueDate = getDueDate();
+        this.paid = false;
+    }
 }

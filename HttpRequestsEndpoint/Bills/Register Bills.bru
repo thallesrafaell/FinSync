@@ -1,0 +1,27 @@
+meta {
+  name: Register Bills
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/bills
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJGaW5TeW5jIiwic3ViIjoidGhhbGxlc3JhZmFlbCIsImV4cCI6MTcyNzE4ODk1N30.C4SkJeBDixqNd-TlY6RRWVnr8bQoI_-R2JSV7vI-w6A
+}
+
+body:json {
+  {
+    "name":"Energia",
+    "value": 155.3,
+    "dueDate":"",
+    "category": {
+        "id": 4,
+        "name": "cartao"
+    }
+  }
+}
