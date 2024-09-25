@@ -43,7 +43,7 @@ public class TokenService {
                 .issuedAt(now)
                 .build();
 
-        var jwtValue = jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();git
+        var jwtValue = jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
         return new LoginResponseDTO(jwtValue);
     }
 }

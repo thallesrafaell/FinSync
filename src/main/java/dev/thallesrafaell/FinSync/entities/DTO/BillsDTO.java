@@ -12,7 +12,7 @@ public record BillsDTO (
         @NotBlank String name,
         @NotNull Double value,
         @NotBlank LocalDateTime dueDate,
-        @NotNull BillsCategory category,
-        Wallet wallet
+        @NotNull Long categoryId,
+        @NotNull UUID walletId
 ){
 }

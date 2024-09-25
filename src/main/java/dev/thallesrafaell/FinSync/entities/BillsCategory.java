@@ -1,6 +1,7 @@
 package dev.thallesrafaell.FinSync.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class BillsCategory {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Bills> bills = new HashSet<>();
 
     public BillsCategory(String name){

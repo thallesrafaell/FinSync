@@ -1,11 +1,11 @@
 meta {
-  name: Register Bills
+  name: Delete Bills
   type: http
-  seq: 1
+  seq: 4
 }
 
-post {
-  url: http://localhost:8080/bills
+delete {
+  url: http://localhost:8080/bills/3
   body: json
   auth: bearer
 }
@@ -17,11 +17,6 @@ auth:bearer {
 body:json {
   {
     "id": 3,
-    "name": "Energia",
-    "value": 155.3,
-    "dueDate": null,
-    "paid": false,
-    "categoryId": 4,
-    "walletId": "7e15f3ab-3a4d-4ef7-964f-cccc74511820"
+    "paid": true
   }
 }
